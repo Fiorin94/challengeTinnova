@@ -7,8 +7,8 @@ let modalMessage = 'body > div.swal-overlay.swal-overlay--show-modal > div > div
 class SignupPage {
     
     go() {
+        //Acessa e valida a página inicial
         cy.visit('/')
-        //Valida a página inicial
         cy.get('div[class="sc-hKMtZM cKmCnz"]').contains('Boa sorte, e divirta-se no processo, isso é uma experiência. aproveite ao máximo.')
         cy.get('div[class="sc-bczRLJ xufcW"]').click()
     }
@@ -81,6 +81,7 @@ class SignupPage {
     }
 
     messageShouldBe(){
+        //Valida modal da mensagem de erro
         cy.get(modalMessage).contains('Todos os campos devem ser preenchidos')
         cy.get('button[class="swal-button swal-button--confirm"').click()
     }
